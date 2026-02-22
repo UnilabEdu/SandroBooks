@@ -8,5 +8,5 @@ from flask_restx import Api
 db = SQLAlchemy()
 migrate = Migrate()
 login_manager = LoginManager()
-admin = Admin(index_view=SecureIndexView())
+admin = Admin(template_mode="bootstrap4", index_view=SecureIndexView())
 api = Api(title="SB")
