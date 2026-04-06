@@ -7,7 +7,10 @@ from src.views import  auth_blueprint
 from src.commands import init_db, populate_db
 from src.models.user import User
 from src.models.book import Book
+from src.models.faq import FrequentlyAskedQuestion
 import src.admin_views
+import src.endpoints.book.book_api
+import src.endpoints.faq.faq_api
 
 BLUEPRINTS = [auth_blueprint]
 COMMANDS = [init_db, populate_db]
