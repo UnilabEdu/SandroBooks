@@ -8,6 +8,7 @@ from src.commands import init_db, populate_db
 from src.models.user import User
 from src.models.series import Series
 from src.models.book import Book
+from src.models.project import Project
 from src.models.faq import FrequentlyAskedQuestion
 import src.admin_views
 import src.endpoints.book.book_api
