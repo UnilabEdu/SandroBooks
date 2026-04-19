@@ -1,7 +1,7 @@
-from flask_admin.contrib.sqla import ModelView
+from src.admin_views.base import SecureModelView
 from markupsafe import Markup
 
-class BookView(ModelView):
+class BookView(SecureModelView):
     column_list = (
         'title',
         'description',
@@ -46,7 +46,7 @@ class BookView(ModelView):
         'audio_link',
         'android_link',
         'ios_link',
-        'about_series'
+        'series'
     )
 
     can_create = True
