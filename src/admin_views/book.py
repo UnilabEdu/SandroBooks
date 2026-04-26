@@ -6,8 +6,9 @@ from markupsafe import Markup
 
 class BookView(SecureModelView):
     column_list = (
-        'title',
-        'description',
+        'title_ka',
+        'title_en',
+        'title_it',
         'image',
         'page_count',
         'online_link',
@@ -32,7 +33,9 @@ class BookView(SecureModelView):
         return ""
 
     column_formatters = {
-        'description': _description_formatter,
+        'description_ka': _description_formatter,
+        'description_en': _description_formatter,
+        'description_it': _description_formatter,
         'online_link': _link_formatter,
         'audio_link': _link_formatter,
         'android_link': _link_formatter,
@@ -45,10 +48,14 @@ class BookView(SecureModelView):
     }
 
     form_columns = (
-        'title',
+        'title_ka',
+        'title_en',
+        'title_it',
+        'description_ka',
+        'description_en',
+        'description_it',
         'price',
         'image',
-        'description',
         'publication_year',
         'page_count',
         'format',
@@ -60,7 +67,7 @@ class BookView(SecureModelView):
         'audio_link',
         'android_link',
         'ios_link',
-        'series'
+        'series',
     )
 
     can_create = True
