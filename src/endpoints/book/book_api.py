@@ -71,6 +71,7 @@ def serialize_book_detail(b, lang='ka'):
 
 @api.route("/books")
 class BooksApi(Resource):
+    @api.expect(parser)
     def get(self):
         args = parser.parse_args()
         lang = args["lang"] or 'ka'
@@ -117,6 +118,7 @@ class BooksApi(Resource):
 
 @api.route("/book/<int:id>")
 class BookApi(Resource):
+    @api.expect(parser)
     def get(self, id):
         args = parser.parse_args()
         lang = args["lang"] or 'ka'

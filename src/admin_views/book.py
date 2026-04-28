@@ -29,7 +29,7 @@ class BookView(SecureModelView):
 
     def _image_formatter(self, context, model, name):
         if model.image:
-            return Markup(f'<img src="/static/assets/{model.image}" width="100">')
+            return Markup(f'img src<="/static/assets/{model.image}" width="100">')
         return ""
 
     column_formatters = {

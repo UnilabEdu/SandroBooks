@@ -24,6 +24,7 @@ def serialize_faq(f, lang='ka'):
 
 @api.route("/faq")
 class FaqApi(Resource):
+    @api.expect(parser)
     def get(self):
         args = parser.parse_args()
         lang = args["lang"] or 'ka'

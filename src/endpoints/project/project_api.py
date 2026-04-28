@@ -26,6 +26,7 @@ def serialize_project(p, lang='ka'):
 
 @api.route("/projects")
 class ProjectsApi(Resource):
+    @api.expect(parser)
     def get(self):
         args = parser.parse_args()
         lang = args["lang"] or 'ka'
@@ -35,6 +36,7 @@ class ProjectsApi(Resource):
 
 @api.route("/project/<int:id>")
 class ProjectApi(Resource):
+    @api.expect(parser)
     def get(self, id):
         args = parser.parse_args()
         lang = args["lang"] or 'ka'
